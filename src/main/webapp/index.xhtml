@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+
+        <h:form>
+            
+            <h:outputLabel for="produto" value="Nome do produto" />
+            <h:inputText id="produto" value="#{carrinhoMB.produto}"/>
+
+            <h:commandButton action="#{carrinhoMB.adicionar()}" value="Adicionar" />
+            <h:commandButton action="#{carrinhoMB.finalizar()}" value="Encerrar" />
+            
+        </h:form>
+
+        <h:dataTable value="#{carrinhoMB.listaDeProdutos}" var="produto">
+            <h:column>
+                <f:facet name="header">Nome Do Produto</f:facet>
+                    #{produto}                    
+            </h:column>
+        </h:dataTable>
+
+    </h:body>
+</html>
